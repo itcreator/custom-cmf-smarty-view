@@ -1,0 +1,36 @@
+{
+    "name": "custom-cmf/smarty-view",
+    "version": "dev",
+    "keywords": ["Custom CMF", "Smarty", "cmf", "cms", "framework", "php"],
+    "authors": [
+        {
+            "name": "Vital Leshchyk",
+            "email": "vitalleshchyk@gmail.com"
+        }
+    ],
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-0": {
+            "Cmf\\SmartyView\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.3",
+        "custom-cmf/cmf": "dev-master",
+        "smarty/smarty": ">=v3.1.15"
+    },
+    "include-path": ["vendor/doctrine/orm/lib", "."],
+    "minimum-stability": "dev",
+    "scripts": {
+        "post-install-cmd": [
+            "Cmf\\Application\\Composer\\Script::installApp",
+            "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\PublicResources\\Composer\\Script::installAssets"
+        ],
+        "post-update-cmd": [
+            "Cmf\\Application\\Composer\\Script::installApp",
+            "Cmf\\Application\\Composer\\Script::initEnvironment",
+            "Cmf\\PublicResources\\Composer\\Script::installAssets"
+        ]
+    }
+}
